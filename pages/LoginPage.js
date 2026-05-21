@@ -2,6 +2,7 @@ export default class LoginPage {
 
     constructor(page) {
         this.page = page;
+        //comment
         this.username = this.page.locator("#username");
         this.password = this.page.locator("#password");
         this.loginBTN = this.page.locator("#signInBtn");
