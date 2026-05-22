@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+    stages {
+        stage('Install') {
+            steps {
+                bat 'npm install'
+            }
+        }
+        stage('Run Tests') {
+            steps {
+                script {
+                    if (env.BRANCH_NAME.startsWith("feature")) {
+                        bat 'npx playwright test --grep "@smoke"'
+                    } else if (env.BRANCH_NAME == "develop") {
+                        bat 'npx playwright test'
+                    } else if (env.BRANCH_NAME == "main") {
+                        bat 'npx playwright test --project=chromium --project=firefox --project=webkit'
+                    }
+                }
+            }
+        }
+    }
+}
