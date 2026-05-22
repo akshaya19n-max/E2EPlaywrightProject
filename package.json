@@ -3,10 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
   "keywords": [],
+  "reporter": "html",
+  "scripts": {
+    "test": "playwright test --headed"
+  },
   "author": "",
   "license": "ISC",
+  "editor.inlineSuggest.enabled": false,
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.tabCompletion": "on",
   "devDependencies": {
     "@playwright/test": "^1.60.0",
     "@types/node": "^25.9.1"
