@@ -10,6 +10,7 @@ export default class LoginPage {
 
     async launchURL() {
         await this.page.goto("https://rahulshettyacademy.com/loginpagePractise/");
+        //new comment
 
     }
     async loginToPage(user_name, pass_word) {
